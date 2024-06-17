@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { IPLService } from '../../ipl.service';
 import { TableComponent } from './table.component';
 import { HttpClient } from '@angular/common/http';
 
@@ -9,7 +9,7 @@ describe('TableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TableComponent, HttpClient],
+      imports: [TableComponent, HttpClient, IPLService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TableComponent);

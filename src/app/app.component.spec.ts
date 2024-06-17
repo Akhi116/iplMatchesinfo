@@ -1,11 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { HttpClient } from '@angular/common/http';
+import { IPLService } from './ipl.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, HttpClient],
+      imports: [AppComponent, HttpClient, IPLService],
     }).compileComponents();
   });
 

@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PieChartComponent } from './pie-chart.component';
 import { HttpClient } from '@angular/common/http';
+import { IPLService } from '../../ipl.service';
 
 describe('PieChartComponent', () => {
   let component: PieChartComponent;
@@ -9,7 +10,7 @@ describe('PieChartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PieChartComponent, HttpClient],
+      imports: [PieChartComponent, HttpClient, IPLService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PieChartComponent);
