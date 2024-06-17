@@ -3,16 +3,23 @@ import { RouterOutlet } from '@angular/router';
 import { TableComponent } from './components/table/table.component';
 import { FormComponent } from './components/form/form.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TableComponent, FormComponent, PieChartComponent],
+  imports: [
+    RouterOutlet,
+    TableComponent,
+    FormComponent,
+    PieChartComponent,
+    HttpClient,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'IplMatchInfo';
 
-  // constructor(private http: IPLService) {}
+  constructor(private http: HttpClient) {}
 }
