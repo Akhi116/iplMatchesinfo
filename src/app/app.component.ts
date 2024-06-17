@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { TableComponent } from './components/table/table.component';
 import { FormComponent } from './components/form/form.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
-import { IPLService } from './ipl.service';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +14,5 @@ import { IPLService } from './ipl.service';
 export class AppComponent {
   title = 'IplMatchInfo';
 
-  constructor(private http: IPLService) {}
+  // constructor(private http: IPLService) {}
 }
