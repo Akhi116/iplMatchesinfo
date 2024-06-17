@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { IPLService } from '../../ipl.service';
 import { TableComponent } from './table.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('TableComponent', () => {
   let component: TableComponent;
@@ -9,7 +9,9 @@ describe('TableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TableComponent, HttpClient, IPLService],
+      declarations: [TableComponent],
+      imports: [HttpClientModule],
+      providers: [IPLService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TableComponent);

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormComponent } from './form.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { IPLService } from '../../ipl.service';
 
 describe('FormComponent', () => {
@@ -10,7 +10,9 @@ describe('FormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormComponent, HttpClient, IPLService],
+      declarations: [FormComponent],
+      imports: [HttpClientModule],
+      providers: [IPLService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FormComponent);
