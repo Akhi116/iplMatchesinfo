@@ -1,0 +1,8 @@
+<app-table
+  (dataFetched)="onDataFetched($event)"
+  (Loaded)="isLoaded($event)"
+></app-table>
+<div *ngIf="showPieChart && !loading" class="chart">
+  <h2><span>Win</span> / Loss Percentages</h2>
+  <canvas width="200" height="200" id="piechart"></canvas>
+</div>

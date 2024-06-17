@@ -1,0 +1,109 @@
+.header{
+    font-family: var(--font-text-bold);
+    background-color: var(--background);
+    text-align: center;
+}
+
+.header h1{
+    font-size: 4rem;
+    color: var(--main);
+}
+
+.section_form{
+    display: flex;
+    height: 10rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.select_box{
+    height: 2.4rem;
+    padding: 0.3rem;
+    border: 1px solid var(--background);
+    font-family: var(--font-text-regular);
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+#season {
+    color: var(--background);
+}
+
+.select_box option{
+    font-family: var(--font-text-regular);
+    color: var(--background);
+}
+
+.btn_container{
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-left: 7.9rem;
+}
+
+.btn_container .submit{
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    font-family: var(--font-text-bold);
+    background-color: var(--main);
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .1s ease-in;
+}
+
+.btn_container .submit:hover{
+    transform: scale(1.06);
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 3rem;
+    }
+
+    .section_form {
+        font-size: 1.4rem;
+        margin: 2rem;
+    }
+
+    .select_box {
+        width: 90%;
+        max-width: none;
+        font-size: 0.9rem;
+    }
+
+    .btn_container{
+        margin-left: 2.9rem;
+    }
+
+    .btn_container .submit {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+  
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .section_form {
+        font-size: 1.2rem;
+    }
+
+    .select_box {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
+    .btn_container .submit {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+

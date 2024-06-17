@@ -1,0 +1,63 @@
+<app-form (formSubmit)="onFormSubmit($event)"></app-form>
+
+<div *ngIf="loading" class="loading" id="loader-container">
+  <lottie-player
+    src="https://lottie.host/359a768d-9600-4f73-84f7-0eec28a93c1b/sYp6snfZpB.json"
+    background="transparent"
+    speed="1"
+    style="width: 200px; height: 200px"
+    direction="1"
+    mode="normal"
+    loop
+    autoplay
+  ></lottie-player>
+</div>
+
+<div *ngIf="error" class="error">Unable to fetch data..💥💥!!</div>
+<section class="result">
+  <ng-container
+    *ngIf="submitted && !loading && data.length > 0; else errorSection"
+  >
+    <table>
+      <caption>
+        List of matches for
+        <span>{{ team }}</span>
+        in season
+        <span>{{ season }}</span>
+      </caption>
+      <thead>
+        <tr>
+          <th *ngFor="let header of headerRows">
+            {{ header }}
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let match of data">
+          <td>{{ match.season }}</td>
+          <td>{{ match.team1 }}</td>
+          <td>{{ match.team2 }}</td>
+          <td>{{ match.date }}</td>
+          <td>{{ match.target }}</td>
+          <td>{{ match.match_type }}</td>
+          <td>{{ match.winner }}</td>
+          <td>{{ match.result }}</td>
+          <td>{{ match.result_margin }}</td>
+          <td>{{ match.player_of_match }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+
+  <ng-template #errorSection>
+    <div
+      *ngIf="submitted && !loading && data.length === 0 && !error"
+      class="error-msg"
+    >
+      No data found for <span>{{ team }}</span> in season
+      <span>{{ season }}</span
+      >😥!!!
+    </div>
+  </ng-template>
+</section>

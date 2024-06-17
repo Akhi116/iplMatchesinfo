@@ -1,0 +1,30 @@
+<header class="header">
+  <h1>IPL Matches (2008 - 2023)</h1>
+</header>
+
+<section class="section_form">
+  <form (submit)="onSubmit()">
+    <label for="team">Select Team: </label>
+    <select [(ngModel)]="selectedTeam" name="team" id="team" class="select_box">
+      <option value="Select Team">Select Team</option>
+      <option *ngFor="let team of teams" [value]="team">{{ team }}</option>
+    </select>
+
+    <label for="season">Select Season: </label>
+    <select
+      [(ngModel)]="selectedSeason"
+      name="season"
+      id="season"
+      class="select_box"
+    >
+      <option value="Select Season">Select Season</option>
+      <option *ngFor="let season of seasons" [value]="season">
+        {{ season }}
+      </option>
+    </select>
+
+    <div class="btn_container">
+      <button type="submit" class="submit">Fetch it!!</button>
+    </div>
+  </form>
+</section>

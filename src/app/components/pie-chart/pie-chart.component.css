@@ -1,0 +1,53 @@
+.chart{
+    width: 500px;
+    height: 540px;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fffefe;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+canvas {
+    width: 100% !important; 
+    height: 100% !important; 
+}
+
+h2{
+    color: var(--content-background);
+}
+
+h2 span{
+    color: var(--main);
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+@media (max-width: 768px) {
+    .chart {
+        max-width: 100%;
+        padding: 0.5rem;
+        height: 400px; /* Adjust height for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart {
+        padding: 0.5rem;
+        height: 300px; /* Further reduce height on very small screens */
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
