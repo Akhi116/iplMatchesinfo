@@ -11,7 +11,7 @@ describe('PieChartComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PieChartComponent],
-      imports: [HttpClientModule],
+      imports: [PieChartComponent, HttpClientModule, IPLService],
       providers: [IPLService],
     }).compileComponents();
 

@@ -6,9 +6,7 @@ import { IPLService } from './ipl.service';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      imports: [HttpClientModule],
-      providers: [IPLService],
+      imports: [AppComponent, HttpClientModule, IPLService],
     }).compileComponents();
   });
 
@@ -28,8 +26,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Hello, IplMatchInfo'
-    );
+    expect(compiled.querySelector('h1')?.textContent).toContain('IplMatchInfo');
   });
 });

@@ -10,7 +10,7 @@ describe('TableComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TableComponent],
-      imports: [HttpClientModule],
+      imports: [TableComponent, HttpClientModule, IPLService],
       providers: [IPLService],
     }).compileComponents();
 
