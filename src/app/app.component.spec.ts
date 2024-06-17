@@ -17,7 +17,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'IplMatchInfo' title`, () => {
+  it(`should have the 'IPL Matches (2008 - 2023)' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('IplMatchInfo');
@@ -27,6 +27,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('IplMatchInfo');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'IPL Matches (2008 - 2023)'
+    );
   });
 });

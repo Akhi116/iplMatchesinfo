@@ -10,7 +10,6 @@ describe('PieChartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PieChartComponent],
       imports: [PieChartComponent, HttpClientModule],
       providers: [IPLService],
     }).compileComponents();
