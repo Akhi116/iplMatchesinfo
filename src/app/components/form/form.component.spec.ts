@@ -10,7 +10,8 @@ describe('FormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormComponent, HttpClientModule, IPLService],
+      imports: [FormComponent, HttpClientModule],
+      providers: [IPLService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FormComponent);

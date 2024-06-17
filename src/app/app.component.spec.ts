@@ -6,7 +6,8 @@ import { IPLService } from './ipl.service';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, HttpClientModule, IPLService],
+      imports: [AppComponent, HttpClientModule],
+      providers: [IPLService],
     }).compileComponents();
   });
 
