@@ -26,12 +26,15 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
+
+      - name : Zip Artifacts
+        run: zip release.zip ./* -r
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: ./dist/ipl-match-info
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -47,7 +50,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: node-app
-          path: ./dist/ipl-match-info
       
       - name: Login to Azure
         uses: azure/login@v1
@@ -56,11 +58,14 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_48C647D60CA4483BBF31C03FA9365F81 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_B6489636B4934459BB6E84B4C01AEDD9 }}
 
+      - name: Unzip Artifacts
+        run: unzip release.zip
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
           app-name: 'iplMatchInfos'
           slot-name: 'Production'
-          package: ./dist/ipl-match-info
+          package: .
           
