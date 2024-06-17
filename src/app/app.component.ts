@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TableComponent } from './components/table/table.component';
 import { FormComponent } from './components/form/form.component';
-import { HttpClient } from '@angular/common/http';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 @Component({
@@ -15,5 +14,5 @@ import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 export class AppComponent {
   title = 'IplMatchInfo';
 
-  constructor(private http: HttpClient) {}
+  // constructor(private http: IPLService) {}
 }
