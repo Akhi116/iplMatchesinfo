@@ -68,10 +68,6 @@
         font-size: 3rem;
     }
 
-    label{
-        color: var(--background)
-    }
-
     .section_form {
         font-size: 1.4rem;
         margin: 3rem;
