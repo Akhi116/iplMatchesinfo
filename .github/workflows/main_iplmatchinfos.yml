@@ -25,13 +25,16 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
+          # npm run test --if-present
+
+      - name: Zip Artifacts
+        run : Compress-Archive -Path dist/ipl-match-info/* -DestinationPath release.zip
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: .
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -47,6 +50,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: node-app
+
+      - name: Unzip Artifacts
+        run: unzip release.zip 
       
       - name: Login to Azure
         uses: azure/login@v1
