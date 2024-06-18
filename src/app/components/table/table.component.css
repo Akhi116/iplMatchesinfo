@@ -1,5 +1,6 @@
 table{
     width: 90%;
+    border-radius: 8px;
     border-collapse: collapse;
     background-color : #fefefe;
     margin: 0  auto;
@@ -8,7 +9,7 @@ table{
 th, td{
     border: 1px solid var(--main);
     padding: 4px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: var(--font-text);
     color: var(--background);
 }
@@ -35,14 +36,15 @@ caption{
     color: #fff;
     max-width: 90%;
     width:80%;
+    font-size: 1.5rem;
+    padding: 5px;
     margin: 0 auto;
-    font-size: 2rem;;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
 
 caption span{
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
 caption span:first-child{
@@ -77,43 +79,47 @@ caption span:nth-child(2){
     align-items: center;
     position: relative;
 }
-@media (max-width: 768px) {
+
+
+@media (max-width: 787px) {
     .table-container {
-        overflow-x: auto;
+        margin-top: 2rem;
     }
 
     table {
-        font-size: 1.2rem;
+        display: block; 
+        overflow-x: auto;
+        white-space: nowrap; 
+        border-radius: 10px;
+        border: 1px solid rgb(82, 20, 157);
     }
 
     th, td {
-        padding: 10px;
+       font-size: 0.9rem;
     }
 
     caption {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
+    }
+    
+    caption span{
+        font-size: 1.4rem;
     }
 
     .result {
         margin: 1rem;
     }
+
+    .error, .error-msg{
+        font-size: 1.4rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .table-container {
-        overflow-x: auto;
-    }
 
-    table {
-        font-size: 1rem;
-    }
 
     th, td {
-        padding: 6px;
-    }
-
-    caption {
-        font-size: 1.6rem;
+        font-size: 0.6rem;
     }
 
     .result {
@@ -121,6 +127,6 @@ caption span:nth-child(2){
     }
 
     .error, .error-msg {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
 }

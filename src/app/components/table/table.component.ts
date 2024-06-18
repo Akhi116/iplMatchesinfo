@@ -40,6 +40,7 @@ export class TableComponent {
 
   headerRows: string[] = [
     'Season',
+    'City',
     'Team 1',
     'Team 2',
     'Date',

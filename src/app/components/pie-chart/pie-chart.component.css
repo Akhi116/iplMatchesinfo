@@ -1,7 +1,6 @@
 .chart{
     width: 500px;
     height: 540px;
-    margin-bottom: 2rem;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -31,20 +30,30 @@ h2 span{
 
 @media (max-width: 768px) {
     .chart {
-        max-width: 100%;
+        max-width: 80%;
         padding: 0.5rem;
-        height: 400px; /* Adjust height for smaller screens */
+        height: 400px; 
+        margin: 1rem auto;
+        margin-bottom: 1rem;
+    }
+
+    canvas{
+        width: 180px;
+        height: 180px;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 }
 
 @media (max-width: 480px) {
     .chart {
+        max-width: 80%;
         padding: 0.5rem;
-        height: 300px; /* Further reduce height on very small screens */
+        height: 400px; 
+        margin: 1rem auto;
+        margin-bottom: 1rem;
     }
 
     h2 {
