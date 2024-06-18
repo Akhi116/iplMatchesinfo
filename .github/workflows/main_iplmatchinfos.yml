@@ -26,10 +26,6 @@ jobs:
           npm install
           npm run build --if-present
 
-      - name: Clean up previous build artifacts
-        run: Remove-Item -Path release.zip -Force -ErrorAction Ignore
-
-
       - name : Zip Artifacts
         run: Compress-Archive -Path dist/ipl-match-info\* -DestinationPath release.zip
       
